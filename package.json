@@ -8,10 +8,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite serve",
-    "build:build-dev": "vite build --mode build-dev",
-    "build:staging": "vite build --mode staging",
-    "build:prod": "vite build --mode production",
-    "serve": "vue-tsc --noEmit && vite build --mode build-dev && vite preview --port 3000",
+    "build": "vite build",
+    "serve": "vue-tsc --noEmit && vite build && vite preview --port 3000",
+    "preview": "vite preview --port 3000",
     "prepare": "husky install",
     "lint": "prettier --write . && eslint \"./**/*.{ts,js,d.ts,vue}\" --fix && stylelint  \"**/*.{css,scss,vue}\" --fix",
     "prettier": "prettier --write .",

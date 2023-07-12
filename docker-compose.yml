@@ -1,0 +1,39 @@
+version: "3"
+services:
+  vue3-element-admin-lite-base:
+    build:
+      context: .
+      dockerfile: ./deployment/Dockerfile
+
+  vue3-element-admin-lite-dev:
+    extends:
+      service: vue3-element-admin-lite-base
+    env_file:
+      - .env.build-dev
+    ports:
+      - 8000:80
+    stdin_open: true
+    tty: true
+    restart: always
+
+  vue3-element-admin-lite-staging:
+    extends:
+      service: vue3-element-admin-lite-base
+    env_file:
+      - .env.staging
+    ports:
+      - 8001:80
+    stdin_open: true
+    tty: true
+    restart: always
+
+  vue3-element-admin-lite-production:
+    extends:
+      service: vue3-element-admin-lite-base
+    env_file:
+      - .env.production
+    ports:
+      - 8082:80
+    stdin_open: true
+    tty: true
+    restart: always

@@ -1,4 +1,10 @@
 declare global {
+  interface Window {
+    configs: {
+      [key: string]: any
+    }
+  }
+
   /**
    * 分页查询参数
    */
